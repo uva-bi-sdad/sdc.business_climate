@@ -1,8 +1,10 @@
 {
   "name": "sdc.business_climate_dev",
-  "measure_not_found": 0,
   "count": 0,
-  "utc_audited": "2022-09-29 20:09:47",
+  "utc_audited": "2022-10-11 13:32:14",
   "data": [],
+  "measure_generated": [],
+  "measure_to_check": [],
+  "measures_found": 0,
   "_references": {}
 }
