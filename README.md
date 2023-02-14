@@ -14,13 +14,13 @@ Employment
   - Gains
   - Loss 
 
-Business characteristic profiles
+Business characteristic
 - Total 
-  - Characteristics profile
+  - Characteristics
 - By Industry type 
-  - Characteristics profile
+  - Characteristics
 - By minority type
-  - Characteristics profile
+  - Characteristics
  
  Industry specific
    - Agriculture
@@ -31,7 +31,7 @@ Business characteristic profiles
      - Livestock and poultry (sales?)
      - Crops harvested (primary crop harvested?)
 
-"Characteristics profile": Entry rate, exit rate, private/public, small/non-small, domestic/international
+"Characteristics": Entry rate, exit rate, private/public, small/non-small, domestic/international
 
 / distribution
 measure_info.json
