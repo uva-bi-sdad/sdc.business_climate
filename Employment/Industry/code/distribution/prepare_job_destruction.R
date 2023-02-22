@@ -1,4 +1,4 @@
-# Count the job creation by geography
+# Measure the job destruction by industry and block group
 
 # library -----------------------------------------------------------------------------
 library(readr)
@@ -22,21 +22,22 @@ mi_fairfax_features <-  read_csv(paste0(uploadpath,"mi_fairfax_features_updated.
 
 # Identify incumbent and new businesses. Count the number of new employees from new business, incumbent.
 job_destruction <- mi_fairfax_features %>%
-  select(duns,year,geoid,exit,employment) %>%
+  select(duns,year,geoid,naics_name,exit,employment) %>%
   group_by(duns) %>%
   arrange(desc(year), .by_group=TRUE) %>%
   mutate(employment_diff = c(NA, diff(employment)))%>%
   ungroup() %>%
   filter((exit==1)|(employment_diff<0)) %>%
-  group_by(geoid,year) %>%
+  group_by(geoid,year,naics_name) %>%
   summarise(job_destruction_exit=-sum(exit*employment, na.rm=T),
             job_destruction_active=sum((1-exit)*employment_diff, na.rm=T),
             business_destruction_job=length(duns),
             total_job_destruction=job_destruction_exit+job_destruction_active,
-            perc_job_destruction_new=100*job_destruction_exit/total_job_destruction,
+            perc_job_destruction_exit=100*job_destruction_exit/total_job_destruction,
             perc_job_destruction_active=100*job_destruction_active/total_job_destruction) %>%
-  pivot_longer(!c('geoid','year'), names_to='measure', values_to='value') %>%
-  mutate(region_type='block group',
+  pivot_longer(!c('geoid','year','naics_name'), names_to='measure', values_to='value') %>%
+  mutate(measure=paste0(naics_name,'_',measure),
+         region_type='block group',
          measure_type = case_when(
            grepl('perc',measure)==T ~ "percentage",
            grepl('job',measure)==T ~ "count"),
@@ -56,6 +57,6 @@ job_destruction <- merge(job_destruction, fairfax_bg, by.x=c('geoid','census_yea
 
 
 # save the data ---------------------------------------------------------------------------------------
-savepath = "Employment/Total/data/distribution/"
-readr::write_csv(job_destruction, xzfile(paste0(savepath,"va059_bg_mi_",min(job_destruction$year),max(job_destruction$year),"_jobs_destruction.csv.xz"), compression = 9))
+savepath = "Employment/Industry/data/distribution/"
+readr::write_csv(job_destruction, xzfile(paste0(savepath,"va059_bg_mi_",min(job_destruction$year),max(job_destruction$year),"_jobs_destruction_by_industry.csv.xz"), compression = 9))
 

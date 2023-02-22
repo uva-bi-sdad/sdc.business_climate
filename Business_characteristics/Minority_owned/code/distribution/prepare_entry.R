@@ -1,4 +1,4 @@
-# Count the total employment by geographies
+# Count the total number of business at entry by block group
 
 # library -----------------------------------------------------------------------------
 library(readr)
@@ -19,15 +19,24 @@ uploadpath = "Microdata/Mergent_intellect/data/working/"
 mi_fairfax_features <-  read_csv(paste0(uploadpath,"mi_fairfax_features_updated.csv.xz"))
 
 
-# count the total employment by block groups 
-fairfax_employment <- mi_fairfax_features %>%
-  group_by(geoid,year) %>%
-  summarize(measure='total_employment',
-            value=sum(employment, na.rm=T)) %>%
+# count the total number of business by block groups 
+entry_business <- mi_fairfax_features %>%
+  mutate(type=if_else(minority==1,'minority_owned','non_minority_owned')) %>%
+  group_by(geoid,year,type) %>%
+  summarize(total_business=length(duns),
+            new_business=sum(entry),
+            entry_rate=100*new_business/total_business) %>%
+  select(geoid,year,type,new_business,entry_rate) %>%
+  pivot_longer(!c('geoid','year','type'), names_to='measure', values_to='value') %>%
   mutate(region_type='block group',
+         measure=paste0(type,'_',measure),
          census_year=if_else(year<2020,2010,2020),
-         measure_type='count',
+         measure_type = case_when(
+           grepl('entry_rate',measure)==T ~ "percentage",
+           grepl('new_business',measure)==T ~ "count"),
          MOE='')
+
+
 
 # add geometry 
 fairfax_bg2010 <- block_groups("VA", "059", 2010) %>% select(geoid=GEOID,region_name=NAMELSAD) %>% st_drop_geometry() %>% mutate(census_year=2010)
@@ -35,11 +44,11 @@ fairfax_bg2020 <- block_groups("VA", "059", 2020) %>% select(geoid=GEOID,region_
 fairfax_bg <- rbind(fairfax_bg2010,fairfax_bg2020)
 
 # merge the data
-fairfax_employment <- merge(fairfax_employment, fairfax_bg, by.x=c('geoid','census_year'), by.y=c('geoid','census_year')) %>%
+entry_business <- merge(entry_business, fairfax_bg, by.x=c('geoid','census_year'), by.y=c('geoid','census_year')) %>%
   select(geoid,region_name,region_type,year,measure,value,measure_type,MOE)
 
 
 # save the data ---------------------------------------------------------------------------------------
-savepath = "Employment/Total/data/distribution/"
-readr::write_csv(fairfax_employment, xzfile(paste0(savepath,"va059_bg_mi_",min(fairfax_employment$year),max(fairfax_employment$year),"_total_employment.csv.xz"), compression = 9))
+savepath = "Business_characteristics/Minority_owned/data/distribution/"
+readr::write_csv(entry_business, xzfile(paste0(savepath,"va059_bg_mi_",min(entry_business$year),max(entry_business$year),"_entry_by_minority.csv.xz"), compression = 9))
 

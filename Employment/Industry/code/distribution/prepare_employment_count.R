@@ -1,4 +1,4 @@
-# Count the total employment by geographies
+# Count the total employment by idustry and block group
 
 # library -----------------------------------------------------------------------------
 library(readr)
@@ -20,9 +20,9 @@ mi_fairfax_features <-  read_csv(paste0(uploadpath,"mi_fairfax_features_updated.
 
 
 # count the total employment by block groups 
-fairfax_employment <- mi_fairfax_features %>%
-  group_by(geoid,year) %>%
-  summarize(measure='total_employment',
+industry_employment <- mi_fairfax_features %>%
+  group_by(geoid,year,naics_name) %>%
+  summarize(measure=paste0(naics_name,'_total_employment'),
             value=sum(employment, na.rm=T)) %>%
   mutate(region_type='block group',
          census_year=if_else(year<2020,2010,2020),
@@ -35,11 +35,11 @@ fairfax_bg2020 <- block_groups("VA", "059", 2020) %>% select(geoid=GEOID,region_
 fairfax_bg <- rbind(fairfax_bg2010,fairfax_bg2020)
 
 # merge the data
-fairfax_employment <- merge(fairfax_employment, fairfax_bg, by.x=c('geoid','census_year'), by.y=c('geoid','census_year')) %>%
+industry_employment <- merge(industry_employment, fairfax_bg, by.x=c('geoid','census_year'), by.y=c('geoid','census_year')) %>%
   select(geoid,region_name,region_type,year,measure,value,measure_type,MOE)
 
 
 # save the data ---------------------------------------------------------------------------------------
-savepath = "Employment/Total/data/distribution/"
-readr::write_csv(fairfax_employment, xzfile(paste0(savepath,"va059_bg_mi_",min(fairfax_employment$year),max(fairfax_employment$year),"_total_employment.csv.xz"), compression = 9))
+savepath = "Employment/Industry/data/distribution/"
+readr::write_csv(industry_employment, xzfile(paste0(savepath,"va059_bg_mi_",min(industry_employment$year),max(industry_employment$year),"_total_employment_by_industry.csv.xz"), compression = 9))
 
