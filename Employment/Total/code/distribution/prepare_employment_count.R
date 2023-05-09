@@ -43,3 +43,25 @@ fairfax_employment <- merge(fairfax_employment, fairfax_bg, by.x=c('geoid','cens
 savepath = "Employment/Total/data/distribution/"
 readr::write_csv(fairfax_employment, xzfile(paste0(savepath,"va059_bg_mi_",min(fairfax_employment$year),max(fairfax_employment$year),"_total_employment.csv.xz"), compression = 9))
 
+
+
+
+####  upload data for ncr ####  ------------------------------------------------------------------------------------------------------------------
+
+# load the data
+uploadpath = "Microdata/Mergent_intellect/data/working/"
+mi_ncr_features <-  read_csv(paste0(uploadpath,"mi_ncr_features_bg.csv.xz"))
+
+# count the total number of business per block groups and year
+temp <- mi_ncr_features %>%
+  group_by(geoid,region_name,region_type,year) %>%
+  summarize(measure='total_employment',
+            value=sum(employment, na.rm=T)) %>%
+  mutate(measure_type='count',
+         MOE='') %>%
+  ungroup() %>%
+  select(geoid,region_name,region_type,year,measure,value,measure_type,MOE)
+
+# save the data
+savepath = "Employment/Total/data/distribution/"
+readr::write_csv(temp, xzfile(paste0(savepath,"ncr_bg_mi_",min(temp$year),max(temp$year),"_total_employment.csv.xz"), compression = 9))

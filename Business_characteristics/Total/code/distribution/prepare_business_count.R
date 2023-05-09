@@ -43,3 +43,26 @@ fairfax_business <- merge(fairfax_business, fairfax_bg, by.x=c('geoid','census_y
 savepath = "Business_characteristics/Total/data/distribution/"
 readr::write_csv(fairfax_business, xzfile(paste0(savepath,"va059_bg_mi_",min(fairfax_business$year),max(fairfax_business$year),"_number_business.csv.xz"), compression = 9))
 
+
+
+
+
+####  upload data for ncr ####  ------------------------------------------------------------------------------------------------------------------
+
+# load the data
+uploadpath = "Microdata/Mergent_intellect/data/working/"
+mi_ncr_features <-  read_csv(paste0(uploadpath,"mi_ncr_features_bg.csv.xz"))
+
+# count the total number of business per block groups and year
+temp <- mi_ncr_features %>%
+  group_by(geoid,region_name,region_type,year) %>%
+  summarize(measure='number_business',
+            value=length(duns)) %>%
+  mutate(measure_type='count',
+         MOE='') %>%
+  select(geoid,region_name,region_type,year,measure,value,measure_type,MOE)
+
+# save the data
+savepath = "Business_characteristics/Total/data/distribution/"
+readr::write_csv(temp, xzfile(paste0(savepath,"ncr_bg_mi_",min(temp$year),max(temp$year),"_number_business.csv.xz"), compression = 9))
+

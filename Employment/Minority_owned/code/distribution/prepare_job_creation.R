@@ -61,3 +61,42 @@ job_creation <- merge(job_creation, fairfax_bg, by.x=c('geoid','census_year'), b
 savepath = "Employment/Minority_owned/data/distribution/"
 readr::write_csv(job_creation, xzfile(paste0(savepath,"va059_bg_mi_",min(job_creation$year),max(job_creation$year),"_jobs_creation_by_minority.csv.xz"), compression = 9))
 
+
+
+
+
+####  upload data for ncr ####  ------------------------------------------------------------------------------------------------------------------
+
+# load the data
+uploadpath = "Microdata/Mergent_intellect/data/working/"
+mi_ncr_features <-  read_csv(paste0(uploadpath,"mi_ncr_features_bg.csv.xz"))
+
+# count the total number of business per block groups and year
+temp <- mi_ncr_features %>%
+  mutate(type=if_else(minority==1,'minority_owned','non_minority_owned')) %>%
+  select(duns,year,geoid,region_name,region_type,type,entry,employment) %>%
+  group_by(duns) %>%
+  arrange(desc(year), .by_group=TRUE) %>%
+  mutate(employment_diff = -c(NA, diff(employment))) %>%
+  ungroup() %>%
+  filter((entry==1)|(employment_diff>0)) %>%
+  group_by(geoid,region_name,region_type,year,type) %>%
+  summarise(job_creation_new=sum(entry*employment, na.rm=T),
+            job_creation_active=sum((1-entry)*employment_diff, na.rm=T),
+            business_create_job=length(duns),
+            total_job_creation=job_creation_new+job_creation_active,
+            perc_job_creation_new=100*job_creation_new/total_job_creation,
+            perc_job_creation_active=100*job_creation_active/total_job_creation) %>%
+  pivot_longer(!c('geoid','region_name','region_type','year','type'), names_to='measure', values_to='value') %>%
+  mutate(measure=paste0(type,'_',measure),
+         measure_type = case_when(
+           grepl('perc',measure)==T ~ "percentage",
+           grepl('job',measure)==T ~ "count"),
+         MOE='') %>%
+  select(geoid,region_name,region_type,year,measure,value,measure_type,MOE)
+
+
+# save the data
+savepath = "Employment/Minority_owned/data/distribution/"
+readr::write_csv(temp, xzfile(paste0(savepath,"ncr_bg_mi_",min(temp$year),max(temp$year),"_jobs_creation_by_minority.csv.xz"), compression = 9))
+

@@ -52,3 +52,31 @@ entry_business <- merge(entry_business, fairfax_bg, by.x=c('geoid','census_year'
 savepath = "Business_characteristics/Minority_owned/data/distribution/"
 readr::write_csv(entry_business, xzfile(paste0(savepath,"va059_bg_mi_",min(entry_business$year),max(entry_business$year),"_entry_by_minority.csv.xz"), compression = 9))
 
+
+
+####  upload data for ncr ####  ------------------------------------------------------------------------------------------------------------------
+
+# load the data
+uploadpath = "Microdata/Mergent_intellect/data/working/"
+mi_ncr_features <-  read_csv(paste0(uploadpath,"mi_ncr_features_bg.csv.xz"))
+
+# count the total number of business per block groups and year
+temp <- mi_ncr_features %>%
+  mutate(type=if_else(minority==1,'minority_owned','non_minority_owned')) %>%
+  group_by(geoid,region_name,region_type,year,type) %>%
+  summarize(total_business=length(duns),
+            new_business=sum(entry),
+            entry_rate=100*new_business/total_business) %>%
+  select(geoid,region_name,region_type,year,type,new_business,entry_rate) %>%
+  pivot_longer(!c('geoid','region_name','region_type','year','type'), names_to='measure', values_to='value') %>%
+  mutate(measure=paste0(type,'_',measure),
+         measure_type = case_when(
+           grepl('entry_rate',measure)==T ~ "percentage",
+           grepl('new_business',measure)==T ~ "count"),
+         MOE='') %>%
+  select(geoid,region_name,region_type,year,measure,value,measure_type,MOE)
+
+
+# save the data
+savepath = "Business_characteristics/Minority_owned/data/distribution/"
+readr::write_csv(temp, xzfile(paste0(savepath,"ncr_bg_mi_",min(temp$year),max(temp$year),"_entry_by_minority.csv.xz"), compression = 9))

@@ -60,3 +60,38 @@ job_destruction <- merge(job_destruction, fairfax_bg, by.x=c('geoid','census_yea
 savepath = "Employment/Industry/data/distribution/"
 readr::write_csv(job_destruction, xzfile(paste0(savepath,"va059_bg_mi_",min(job_destruction$year),max(job_destruction$year),"_jobs_destruction_by_industry.csv.xz"), compression = 9))
 
+
+
+
+####  upload data for ncr ####  ------------------------------------------------------------------------------------------------------------------
+
+# load the data
+uploadpath = "Microdata/Mergent_intellect/data/working/"
+mi_ncr_features <-  read_csv(paste0(uploadpath,"mi_ncr_features_bg.csv.xz"))
+
+# count the total number of business per block groups and year
+temp <- mi_ncr_features %>%
+  select(duns,year,geoid,region_name,region_type,naics_name,exit,employment) %>%
+  group_by(duns) %>%
+  arrange(desc(year), .by_group=TRUE) %>%
+  mutate(employment_diff = -c(NA, diff(employment)))%>%
+  ungroup() %>%
+  filter((exit==1)|(employment_diff<0)) %>%
+  group_by(geoid,region_name,region_type,year,naics_name) %>%
+  summarise(job_destruction_exit=-sum(exit*employment, na.rm=T),
+            job_destruction_active=sum((1-exit)*employment_diff, na.rm=T),
+            business_destruction_job=length(duns),
+            total_job_destruction=job_destruction_exit+job_destruction_active,
+            perc_job_destruction_exit=100*job_destruction_exit/total_job_destruction,
+            perc_job_destruction_active=100*job_destruction_active/total_job_destruction) %>%
+  pivot_longer(!c('geoid','region_name','region_type','year','naics_name'), names_to='measure', values_to='value') %>%
+  mutate(measure=paste0(naics_name,'_',measure),
+         measure_type = case_when(
+           grepl('perc',measure)==T ~ "percentage",
+           grepl('job',measure)==T ~ "count"),
+         MOE='') %>%
+  select(geoid,region_name,region_type,year,measure,value,measure_type,MOE)
+
+# save the data
+savepath = "Employment/Industry/data/distribution/"
+readr::write_csv(temp, xzfile(paste0(savepath,"ncr_bg_mi_",min(temp$year),max(temp$year),"_jobs_destruction_by_industry.csv.xz"), compression = 9))
