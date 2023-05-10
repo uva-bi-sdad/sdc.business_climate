@@ -555,7 +555,7 @@
         "data_type": "numeric",
         "equity_category": "Status",
         "layer": "",
-        "long_description": "Number of new businesses in Educational Services (in percent)",
+        "long_description": "Number of new businesses in Educational Services (in percent). Education Services is defined by NAICS code. ",
         "long_name": "Entry rate in Educational Services",
         "measure_type": "percentage",
         "short_description": "Number of new businesses in Educational Services (in percent)",
@@ -567,7 +567,7 @@
                 "url": "https://www.ftserussell.com/data/mergent-intellect"
             }
         ],
-        "statement": "",
+        "statement": "The Educational Services entry rate in {features.name} is {value}",
         "type": "percent",
         "unit": ""
     },
