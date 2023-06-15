@@ -65,7 +65,7 @@ combined_count <- combined %>% select(year, geoid, sex_id, value = value.x, segm
 combined_percent <- combined %>% select(year, geoid, sex_id, value = perc, segment = segment.x)%>% mutate(aggregation = "perc")
 data <- combined_overall %>% rbind(combined_count) %>% rbind(combined_percent)
 
-data <- data %>% mutate(sex_id = ifelse(sex_id == "CS01", "male", "female") %>%
+data <- data %>% mutate(sex_id = ifelse(sex_id == "CS01", "male", "female"),
  segment = case_when(
     segment == "SA01" ~ "age_29_and_under",
     segment == "SA02" ~ "age_30_to_54",
@@ -85,5 +85,5 @@ data <- data %>% mutate(sex_id = ifelse(sex_id == "CS01", "male", "female") %>%
 #          row.names = FALSE)
 
 fx <- data %>% filter(stringr::str_detect(geoid, "^51059"))
-write.csv(fx, "./Employment/Worker_diversity/data/distribution/va059_cttrbg_lodes_2010_2019_workplace_employment_segments_by_sex.csv.xz",
-          row.names = FALSE)
+readr::write_csv(fx, xzfile("./Employment/Worker_diversity/data/distribution/va059_cttrbg_lodes_2010_2019_workplace_employment_segments_by_sex.csv.xz", compression = 9))
+
