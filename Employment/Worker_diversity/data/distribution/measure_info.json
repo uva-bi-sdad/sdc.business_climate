@@ -246,10 +246,10 @@
         "data_type": "",
         "equity_category": "",
         "layer": [],
-        "long_description": "Overall count of the male workforce earning $1,251 to $3,333 per month. Based off the Workforce Area Characteristics (WAC) data from Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics (LODES). Jobs in this case are totaled by work Census Block.",
+        "long_description": "Overall count of the male workforce earning $1,251 to \$3,333 per month. Based off the Workforce Area Characteristics (WAC) data from Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics (LODES). Jobs in this case are totaled by work Census Block.",
         "long_name": "Workplace - Male workforce earning $1,251 to $3,333 per month",
         "measure_type": "count",
-        "short_description": "Overall count of the male workforce earning $1,251 to $3,333 per month",
+        "short_description": "Overall count of the male workforce earning $1,251 to \$3,333 per month",
         "short_name": "Workplace - Male workforce earning $1,251 to $3,333 per month",
         "sources": [
             {
@@ -295,10 +295,10 @@
         "equity_category": "",
         "layer": [],
         "long_description": "Overall count of the male workforce earning over $3,334 per month. Based off the Workforce Area Characteristics (WAC) data from Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics (LODES). Jobs in this case are totaled by work Census Block.",
-        "long_name": "Workplace - Male workforce earning over $3,334 per month (workplace)",
+        "long_name": "Workplace - Male workforce earning over $3,334 per month",
         "measure_type": "count",
         "short_description": "Overall count of the male workforce earning over $3,334 per month",
-        "short_name": "Workplace - Male workforce earning over $3,334 per month (workplace)",
+        "short_name": "Workplace - Male workforce earning over $3,334 per month",
         "sources": [
             {
                 "name": "Longitudinal Employer-Household Dynamics (LEHD)",
@@ -319,10 +319,10 @@
         "equity_category": "",
         "layer": [],
         "long_description": "Overall count of the female workforce earning over $3,334 per month. Based off the Workforce Area Characteristics (WAC) data from Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics (LODES). Jobs in this case are totaled by work Census Block.",
-        "long_name": "Female workforce earning over $3,334 per month (workplace)",
+        "long_name": "Female workforce earning over $3,334 per month",
         "measure_type": "count",
         "short_description": "Overall count of the female workforce earning over $3,334 per month",
-        "short_name": "Female workforce earning over $3,334 per month (workplace)",
+        "short_name": "Female workforce earning over $3,334 per month",
         "sources": [
             {
                 "name": "Longitudinal Employer-Household Dynamics (LEHD)",
@@ -343,10 +343,10 @@
         "equity_category": "",
         "layer": [],
         "long_description": "Overall count of the male workforce in Goods Producing industry sectors. Based off the Workforce Area Characteristics (WAC) data from Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics (LODES). Jobs in this case are totaled by work Census Block.",
-        "long_name": "Male workforce in Goods Producing industry sectors (workplace)",
+        "long_name": "Male workforce in Goods Producing industry sectors",
         "measure_type": "count",
         "short_description": "Overall count of the male workforce in Goods Producing industry sectors",
-        "short_name": "Male workforce in Goods Producing industry sectors (workplace)",
+        "short_name": "Male workforce in Goods Producing industry sectors",
         "sources": [
             {
                 "name": "Longitudinal Employer-Household Dynamics (LEHD)",
@@ -583,10 +583,10 @@
         "equity_category": "",
         "layer": [],
         "long_description": "Percent of the male workforce over 55. Based off the Workforce Area Characteristics (WAC) data from Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics (LODES). Jobs in this case are totaled by work Census Block.",
-        "long_name": "Male workforce over 55 (workplace)",
+        "long_name": "Workplace - Male workforce over 55",
         "measure_type": "percent",
         "short_description": "Percent of the male workforce over 55",
-        "short_name": "Male workforce over 55 (workplace)",
+        "short_name": "Workplace - Male workforce over 55",
         "sources": [
             {
                 "name": "Longitudinal Employer-Household Dynamics (LEHD)",
@@ -678,10 +678,10 @@
         "data_type": "",
         "equity_category": "",
         "layer": [],
-        "long_description": "Percent of the male workforce earning $1,250 to $3,333 per month. Based off the Workforce Area Characteristics (WAC) data from Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics (LODES). Jobs in this case are totaled by work Census Block.",
+        "long_description": "Percent of the male workforce earning $1,250 to \$3,333 per month. Based off the Workforce Area Characteristics (WAC) data from Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics (LODES). Jobs in this case are totaled by work Census Block.",
         "long_name": "Workplace - Male workforce earning $1,250 to $3,333 per month",
         "measure_type": "percent",
-        "short_description": "Percent of the male workforce earning $1,250 to $3,3330 per month",
+        "short_description": "Percent of the male workforce earning $1,250 to \$3,3330 per month",
         "short_name": "Workplace - Male workforce earning $1,250 to $3,333 per month",
         "sources": [
             {
@@ -702,10 +702,10 @@
         "data_type": "",
         "equity_category": "",
         "layer": [],
-        "long_description": "Percent of the female workforce earning $1,250 to $3,333 per month. Based off the Workforce Area Characteristics (WAC) data from Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics (LODES). Jobs in this case are totaled by work Census Block.",
+        "long_description": "Percent of the female workforce earning $1,250 to \$3,333 per month. Based off the Workforce Area Characteristics (WAC) data from Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics (LODES). Jobs in this case are totaled by work Census Block.",
         "long_name": "Workplace - Female workforce earning $1,250 to $3,333 per month",
         "measure_type": "percent",
-        "short_description": "Percent of the female workforce earning $1,250 to $3,3330 per month",
+        "short_description": "Percent of the female workforce earning $1,250 to \$3,3330 per month",
         "short_name": "Workplace - Female workforce earning $1,250 to $3,333 per month",
         "sources": [
             {
@@ -815,7 +815,7 @@
         "type": "",
         "unit": "person"
     },
-    "industry_trade_transporation_utilities_male_perc": {
+    "wac_industry_trade_transporation_utilities_male_perc": {
         "aggregation_method": "percent",
         "category": "Employment/Workforce Development",
         "citations": [],
@@ -839,7 +839,7 @@
         "type": "",
         "unit": "person"
     },
-    "industry_trade_transporation_utilities_female_perc": {
+    "wac_industry_trade_transporation_utilities_female_perc": {
         "aggregation_method": "percent",
         "category": "Employment/Workforce Development",
         "citations": [],
@@ -863,7 +863,7 @@
         "type": "",
         "unit": "person"
     },
-    "industry_other_services_male_perc": {
+    "wac_industry_other_services_male_perc": {
         "aggregation_method": "percent",
         "category": "Employment/Workforce Development",
         "citations": [],
@@ -1206,10 +1206,10 @@
     "data_type": "",
     "equity_category": "",
     "layer": [],
-    "long_description": "Overall count of the male workforce earning $1,251 to $3,333 per month. Based off the Residence Area Characteristics (WAC) data from Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics (LODES). Jobs in this case are totaled by home Census Block.",
+    "long_description": "Overall count of the male workforce earning $1,251 to \$3,333 per month. Based off the Residence Area Characteristics (WAC) data from Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics (LODES). Jobs in this case are totaled by home Census Block.",
     "long_name": "Home - Male workforce earning $1,251 to $3,333 per month",
     "measure_type": "count",
-    "short_description": "Overall count of the male workforce earning $1,251 to $3,333 per month",
+    "short_description": "Overall count of the male workforce earning $1,251 to \$3,333 per month",
     "short_name": "Home - Male workforce earning $1,251 to $3,333 per month",
     "sources": [
       {
@@ -1230,10 +1230,10 @@
     "data_type": "",
     "equity_category": "",
     "layer": [],
-    "long_description": "Overall count of the female workforce earning $1,251 to $3,333 per month. Based off the Residence Area Characteristics (WAC) data from Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics (LODES). Jobs in this case are totaled by home Census Block.",
+    "long_description": "Overall count of the female workforce earning $1,251 to \$3,333 per month. Based off the Residence Area Characteristics (WAC) data from Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics (LODES). Jobs in this case are totaled by home Census Block.",
     "long_name": "Home - Female workforce earning $1,251 to $3,333",
     "measure_type": "count",
-    "short_description": "Overall count of the female workforce earning $1,251 to $3,333 per month",
+    "short_description": "Overall count of the female workforce earning $1,251 to \$3,333 per month",
     "short_name": "Home - Female workforce earning $1,251 to $3,333",
     "sources": [
       {
@@ -1255,10 +1255,10 @@
     "equity_category": "",
     "layer": [],
     "long_description": "Overall count of the male workforce earning over $3,334 per month. Based off the Residence Area Characteristics (WAC) data from Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics (LODES). Jobs in this case are totaled by home Census Block.",
-    "long_name": "Home - Male workforce earning over $3,334 per month (workplace)",
+    "long_name": "Home - Male workforce earning over $3,334 per month",
     "measure_type": "count",
     "short_description": "Overall count of the male workforce earning over $3,334 per month",
-    "short_name": "Home - Male workforce earning over $3,334 per month (workplace)",
+    "short_name": "Home - Male workforce earning over $3,334 per month",
     "sources": [
       {
         "name": "Longitudinal Employer-Household Dynamics (LEHD)",
@@ -1279,10 +1279,10 @@
     "equity_category": "",
     "layer": [],
     "long_description": "Overall count of the female workforce earning over $3,334 per month. Based off the Residence Area Characteristics (WAC) data from Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics (LODES). Jobs in this case are totaled by home Census Block.",
-    "long_name": "Female workforce earning over $3,334 per month (workplace)",
+    "long_name": "Home - Female workforce earning over $3,334 per month",
     "measure_type": "count",
     "short_description": "Overall count of the female workforce earning over $3,334 per month",
-    "short_name": "Female workforce earning over $3,334 per month (workplace)",
+    "short_name": "Home - Female workforce earning over $3,334 per month",
     "sources": [
       {
         "name": "Longitudinal Employer-Household Dynamics (LEHD)",
@@ -1303,10 +1303,10 @@
     "equity_category": "",
     "layer": [],
     "long_description": "Overall count of the male workforce in Goods Producing industry sectors. Based off the Residence Area Characteristics (WAC) data from Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics (LODES). Jobs in this case are totaled by home Census Block.",
-    "long_name": "Male workforce in Goods Producing industry sectors (workplace)",
+    "long_name": "Home - Male workforce in Goods Producing industry sectors",
     "measure_type": "count",
     "short_description": "Overall count of the male workforce in Goods Producing industry sectors",
-    "short_name": "Male workforce in Goods Producing industry sectors (workplace)",
+    "short_name": "Home - Male workforce in Goods Producing industry sectors",
     "sources": [
       {
         "name": "Longitudinal Employer-Household Dynamics (LEHD)",
@@ -1543,10 +1543,10 @@
     "equity_category": "",
     "layer": [],
     "long_description": "Percent of the male workforce over 55. Based off the Residence Area Characteristics (WAC) data from Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics (LODES). Jobs in this case are totaled by home Census Block.",
-    "long_name": "Male workforce over 55 (workplace)",
+    "long_name": "Home - Male workforce over 55",
     "measure_type": "percent",
     "short_description": "Percent of the male workforce over 55",
-    "short_name": "Male workforce over 55 (workplace)",
+    "short_name": "Home - Male workforce over 55",
     "sources": [
       {
         "name": "Longitudinal Employer-Household Dynamics (LEHD)",
@@ -1638,10 +1638,10 @@
     "data_type": "",
     "equity_category": "",
     "layer": [],
-    "long_description": "Percent of the male workforce earning $1,250-$3,333 per month. Based off the Residence Area Characteristics (WAC) data from Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics (LODES). Jobs in this case are totaled by home Census Block.",
+    "long_description": "Percent of the male workforce earning $1,250 to \$3,333 per month. Based off the Residence Area Characteristics (WAC) data from Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics (LODES). Jobs in this case are totaled by home Census Block.",
     "long_name": "Home - Male workforce earning $1,250 to $3,333 per month",
     "measure_type": "percent",
-    "short_description": "Percent of the male workforce earning $1,250 to $3,3330 per month",
+    "short_description": "Percent of the male workforce earning $1,250 to \$3,333 per month",
     "short_name": "Home - Male workforce earning $1,250 to $3,333 per month",
     "sources": [
       {
@@ -1651,7 +1651,7 @@
         "url": "https://lehd.ces.census.gov/data/"
       }
     ],
-    "statement": "{value} of the male workers living in {features.name} earn $1,250-$3,333 per month.",
+    "statement": "{value} of the male workers living in {features.name} earn $1,250 to $3,333 per month.",
     "type": "",
     "unit": "person"
   },
@@ -1662,10 +1662,10 @@
     "data_type": "",
     "equity_category": "",
     "layer": [],
-    "long_description": "Percent of the female workforce earning $1,250 to $3,333 per month. Based off the Residence Area Characteristics (WAC) data from Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics (LODES). Jobs in this case are totaled by home Census Block.",
+    "long_description": "Percent of the female workforce earning $1,250 to \$3,333 per month. Based off the Residence Area Characteristics (WAC) data from Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics (LODES). Jobs in this case are totaled by home Census Block.",
     "long_name": "Home - Female workforce earning $1,250 to $3,333 per month",
     "measure_type": "percent",
-    "short_description": "Percent of the female workforce earning $1,250-$3,3330 per month",
+    "short_description": "Percent of the female workforce earning $1,250 to \$3,333 per month",
     "short_name": "Home - Female workforce earning $1,250 to $3,333 per month",
     "sources": [
       {
@@ -1775,7 +1775,7 @@
     "type": "",
     "unit": "person"
   },
-  "industry_trade_transporation_utilities_male_perc": {
+  "rac_industry_trade_transporation_utilities_male_perc": {
     "aggregation_method": "percent",
     "category": "Employment/Workforce Development",
     "citations": [],
@@ -1799,7 +1799,7 @@
     "type": "",
     "unit": "person"
   },
-  "industry_trade_transporation_utilities_female_perc": {
+  "rac_industry_trade_transporation_utilities_female_perc": {
     "aggregation_method": "percent",
     "category": "Employment/Workforce Development",
     "citations": [],
@@ -1823,7 +1823,7 @@
     "type": "",
     "unit": "person"
   },
-  "industry_other_services_male_perc": {
+  "rac_industry_other_services_male_perc": {
     "aggregation_method": "percent",
     "category": "Employment/Workforce Development",
     "citations": [],
@@ -1843,7 +1843,7 @@
         "url": "https://lehd.ces.census.gov/data/"
       }
     ],
-    "statement": "{value} of the male workers living in {features.name} are in other Service industry sectors .",
+    "statement": "{value} of the male workers living in {features.name} are in other Service industry sectors.",
     "type": "",
     "unit": "person"
   },
