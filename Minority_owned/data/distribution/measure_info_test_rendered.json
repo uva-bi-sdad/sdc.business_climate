@@ -1,0 +1,62 @@
+{
+  "minority_owned_entry_rate": {
+    "short_description": "Entry rate among minority_owned.",
+    "statement": "This entity has {value} minority_owned Entry rates.",
+    "full_name": "minority_owned_entry_rate",
+    "measure": "",
+    "short_name": "",
+    "long_name": "",
+    "category": "",
+    "long_description": "",
+    "measure_type": "",
+    "unit": "",
+    "sources": {},
+    "citations": {},
+    "layer": {}
+  },
+  "non_minority_owned_entry_rate": {
+    "short_description": "Entry rate among non_minority_owned.",
+    "statement": "This entity has {value} non_minority_owned Entry rates.",
+    "full_name": "non_minority_owned_entry_rate",
+    "measure": "",
+    "short_name": "",
+    "long_name": "",
+    "category": "",
+    "long_description": "",
+    "measure_type": "",
+    "unit": "",
+    "sources": {},
+    "citations": {},
+    "layer": {}
+  },
+  "minority_owned_exit_rate": {
+    "short_description": "Exit rate among minority_owned.",
+    "statement": "This entity has {value} minority_owned Exit rates.",
+    "full_name": "minority_owned_exit_rate",
+    "measure": "",
+    "short_name": "",
+    "long_name": "",
+    "category": "",
+    "long_description": "",
+    "measure_type": "",
+    "unit": "",
+    "sources": {},
+    "citations": {},
+    "layer": {}
+  },
+  "non_minority_owned_exit_rate": {
+    "short_description": "Exit rate among non_minority_owned.",
+    "statement": "This entity has {value} non_minority_owned Exit rates.",
+    "full_name": "non_minority_owned_exit_rate",
+    "measure": "",
+    "short_name": "",
+    "long_name": "",
+    "category": "",
+    "long_description": "",
+    "measure_type": "",
+    "unit": "",
+    "sources": {},
+    "citations": {},
+    "layer": {}
+  }
+}
