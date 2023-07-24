@@ -5,10 +5,10 @@
     "unit": "business",
     "equity_category": "Status",
     "aggregation_method": "{variant}",
-    "short_name": "business {variant} ({category}-owned)",
-    "long_name": "{variant.short_description}",
-    "short_description": "{variant}",
-    "long_description": "{variant} {category} Available for US businesses.",
+    "short_name": "{variant} ({category}-owned)",
+    "long_name": "{variant.short_description} as {category.default}-owned",
+    "short_description": "{variant} as {category.default}-owned",
+    "long_description": "{variant} as {category.default}-owned. {category} Available for US businesses.",
     "statement": "{variant}",
     "sources": [
       {

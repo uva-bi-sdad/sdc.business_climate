@@ -5,10 +5,10 @@
     "unit": "business",
     "equity_category": "Status",
     "aggregation_method": "{variant}",
-    "short_name": "{variant} {category}-owned",
+    "short_name": "{variant} as {category}-owned",
     "long_name": "{variant} as {category}-owned",
     "short_description": "{variant} as {category}-owned",
-    "long_description": "{variant} owned by {category.default} {category} Available for US businesses.",
+    "long_description": "{variant} owned by {category.default} {category}",
     "statement": "{variant}",
     "sources": [
       {
@@ -31,7 +31,7 @@
         "default": "entry rate",
         "data_type": "decimal",
         "aggregation_method": "percent",
-        "short_description": "Businesses entry rate",
+        "short_description": "Entry rate",
         "long_description": "Percent of new businesses (a new business is a company newly created or has moved to the region): \\[entry_rate=\\frac{new_businesses}{all_businesses}\\]",
         "statement": "{value} percent of businesses are new in {region_name}."
       },
@@ -39,7 +39,7 @@
         "default": "exit rate",
         "data_type": "decimal",
         "aggregation_method": "percent",
-        "short_description": "Businesses exit rate",
+        "short_description": "Exit rate",
         "long_description": "Percent of closed businesses (a closed business is a company that stoped its activities or leaving the region): \\[exit_rate=\\frac{exited_businesses}{all_businesses}\\]",
         "statement": "{value} percent of businesses closed in {region_name}."
       },

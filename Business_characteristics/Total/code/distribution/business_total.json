@@ -8,7 +8,7 @@
     "short_name": "{variant}",
     "long_name": "{variant}",
     "short_description": "{variant}",
-    "long_description": "{variant}. Available for US businesses.",
+    "long_description": "{variant} Available for US businesses.",
     "statement": "{variant}",
     "sources": [
       {
@@ -18,7 +18,7 @@
       }
     ],
     "categories": {
-      "blank": {},
+      "blank": {}
     },
     "variants": {
       "entry_rate": {
