@@ -120,7 +120,7 @@
         "data_type": "decimal",
         "aggregation_method": "percent",
         "short_description": "Job creation rate by active businesses",
-        "long_description": "Percent of new jobs created by active businesses (an active business is a company that exist last year): \\[perc\_job\_creation\_active=\\frac{job\_creation\_active}{all\_job\_creation}\\]",
+        "long_description": "Percent of new jobs created by active businesses (an active business is a company that exist last year): \\[perc\\_job\\_creation\\_active=\\frac{job\\_created\\_by\\_active\\_businesses}{all\\_jobs\\_created}\\]",
         "statement": "{value} percent of new jobs created by active businesses in {region_name}."
       },
       "perc_job_creation_new": {
@@ -128,7 +128,7 @@
         "data_type": "decimal",
         "aggregation_method": "percent",
         "short_description": "Job creation rate by new businesses",
-        "long_description": "Percent of new jobs created by new businesses (a new business is a company newly created or has moved to the region): \\[perc\_job\_creation\_new=\\frac{job\_creation\_new}{all\_job\_creation}\\]",
+        "long_description": "Percent of new jobs created by new businesses (a new business is a company newly created or has moved to the region): \\[perc\\_job\\_creation\\_new=\\frac{job\\_created\\_by\\_new\\_businesses}{all\\_jobs\\_created}\\]",
         "statement": "{value} percent of new jobs created by new businesses in {region_name}."
       },
       "total_job_creation": {
@@ -168,7 +168,7 @@
         "data_type": "decimal",
         "aggregation_method": "percent",
         "short_description": "Job destruction rate by active businesses",
-        "long_description": "Percent of jobs cutted by active businesses (an active business is a company that exist last year): \\[perc\_job\_destruction\_active=\\frac{jobs\_destroyed\_active}{all\_jobs\_destroyed}\\]",
+        "long_description": "Percent of jobs cutted by active businesses (an active business is a company that exist last year): \\[perc\\_job\\_destruction\\_active=\\frac{jobs\\_eliminated\\_by\\_active\\_businesses}{all\\_jobs\\_eliminated}\\]",
         "statement": "{value} jobs cutted by active businesses in {region_name}."
       },
       "perc_job_destruction_exit": {
@@ -176,7 +176,7 @@
         "data_type": "decimal",
         "aggregation_method": "percent",
         "short_description": "Job destruction rate by closed businesses",
-        "long_description": "Percent of jobs cutted by closed businesses (a closed business is a company that stoped its activities or leaving the region): \\[perc\_job\_destruction\_exit=\\frac{jobs\_destroyed\_exit}{all\_jobs_destroyed}\\]",
+        "long_description": "Percent of jobs cutted by closed businesses (a closed business is a company that stoped its activities or leaving the region): \\[perc\\_job\\_destruction\\_exit=\\frac{jobs\\_eliminated\\_by\\_closed\\_businesses}{all\\_jobs\\_eliminated}\\]",
         "statement": "{value} jobs cutted by closed businesses in {region_name}."
       },
       "total_job_destruction": {
@@ -192,7 +192,7 @@
         "data_type": "decimal",
         "aggregation_method": "index",
         "short_description": "ratio of industry employment share",
-        "long_description": "Ratio of industry employment share from an area relative to the county: \\[Location\_quotient=\\frac{industry\_employment\_share_geography}{industry\_employment\_share_county}\\]",
+        "long_description": "Ratio of industry employment share from an area relative to the county: \\[Location\\_quotient=\\frac{industry\\_employment\\_share_geography}{industry\\_employment\\_share_county}\\]",
         "statement": "The {category.name} industry has {value} more employment share in {region_name} relative to the county."
       },
       "Herfindalh_Hirschman_index": {
@@ -200,7 +200,7 @@
         "data_type": "decimal",
         "aggregation_method": "index",
         "short_description": "The employment concentration score",
-        "long_description": "employment concentration by few businesses : \\[Herfindalh\_Hirschman\_index=\\sqrt{\\sum{business\_employment\_share^{2}}}\\]",
+        "long_description": "employment concentration by few businesses : \\[Herfindalh\\_Hirschman\\_index=\\sqrt{\\sum{business\\_employment\\_share^{2}}}\\]",
         "statement": "The Herfindalh Hirschman employment concentration in {category.name} industry is {value}."
       }
     }
